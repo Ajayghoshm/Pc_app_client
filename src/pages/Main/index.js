@@ -15,12 +15,15 @@ import MobileMenu from '../../components/MobileMenu';
  */
 import Dashboard from '../Dashboard';
 import Components from '../Components';
+import Otherpages from "../Otherpages"
 import UserProfile from '../UserProfile';
 import MapsPage from '../MapsPage';
 import Forms from '../Forms';
 import Charts from '../Charts';
 import Calendar from '../Calendar';
 import Tables from '../Tables';
+import Academics from '../Academics'
+import Training from "../Training"
 
 const Main = ({
   mobileNavVisibility,
@@ -50,6 +53,9 @@ const Main = ({
           <Route path="/maps" component={MapsPage} />
           <Route path="/charts" component={Charts} />
           <Route path="/calendar" component={Calendar} />
+          <Route path="/academics" component={Academics}/>
+          <Route path="/training" component={Training}/>
+          <Route path="/other"component={Otherpages}/>
           <Footer />
         </div>
       </div>

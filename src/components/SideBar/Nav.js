@@ -13,16 +13,57 @@ class Nav extends Component {
       <ul className="nav">
         <li className={location.pathname === '/' ? 'active' : null}>
           <Link to="/">
-            <i className="pe-7s-graph"></i>
+            <i className="pe-7s-keypad"></i>
             <p>Dashboard</p>
           </Link>
         </li>
+        <li className={this.isPathActive('/academics') || this.state.academicsMenuOpen ? 'active' : null}>
+          <a onClick={() => this.setState({ academicsMenuOpen: !this.state.academicsMenuOpen })} data-toggle="collapse">
+            <i className="pe-7s-file"></i>
+            <p>Academics <b className="caret"></b></p>
+          </a>
+          <Collapse in={this.state.academicsMenuOpen}>
+            <div>
+              <ul className="nav">
+                <li className={this.isPathActive('/academics/semester') ? 'active' : null}>
+                  <Link to="/academics/semester">Semester Details</Link>
+                </li>
+              </ul>
+            </div>
+          </Collapse>
+        </li>
+        <li className={this.isPathActive('other')|| this.state.otherpagesMenuOpen ? 'active':null}>
+          <a onClick={()=>this.setState({otherpagesMenuOpen: !this.state.otherpagesMenuOpen })} data-toggle="collapse">
+          <i className="pe-7s-file"></i>
+          <p>Otherpages <b className="caret"></b></p>
+          </a>
+          <Collapse in={this.state.otherpagesMenuOpen}>
+          <div>
+            <ul className="nav">
+            <li className={this.isPathActive('/other/register')? 'active': null}>
+            <Link to="/other/register">Register</Link>
+            </li>
+            <li className={this.isPathActive('/other/login')? 'active': null}>
+            <Link to="/other/login">Login</Link>
+            </li>
+            </ul>
+            </div>
+            </Collapse>
+        </li>
+        <li className={this.isPathActive("/training") ? 'active' : null}>
+          <Link to="/training">
+            <i className="pe-7s-loop"></i>
+            <p>Training</p>
+          </Link></li>
+
+
+
         <li className={this.isPathActive('/components') || this.state.componentMenuOpen ? 'active' : null}>
           <a onClick={() => this.setState({ componentMenuOpen: !this.state.componentMenuOpen })}
             data-toggle="collapse">
             <i className="pe-7s-plugin"></i>
             <p>
-              Components
+              Component
             <b className="caret"></b>
             </p>
           </a>

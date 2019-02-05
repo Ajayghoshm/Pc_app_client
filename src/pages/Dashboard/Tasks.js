@@ -56,12 +56,13 @@ class Tasks extends Component {
 
   render() {
     return (
+      <div>
+      <div className="header">
+      <h4 className="title">Notifications</h4>
+    </div>
       <div className="card ">
-        <div className="header">
-          <h4 className="title">Tasks</h4>
-          <p className="category">Backend development</p>
-        </div>
-        <div className="content">
+        <div className="content"
+        style={{'max-height': 400, 'min-height': 400, 'overflow-y': 'scroll'}}>
           <form>
           {this.state.todos.map(todo => (
             <div className={cx("todo-item", {completed: todo.completed})} key={todo.id}>
@@ -84,15 +85,14 @@ class Tasks extends Component {
             </div>
           ))}
           </form>
-
-
         </div>
-        <div className="footer">
+        {/*<div className="footer">
           <hr />
           <div className="stats">
             <i className="fa fa-history"></i> Updated 3 minutes ago
               </div>
-        </div>
+        </div>*/}
+      </div>
       </div>
     );
   }

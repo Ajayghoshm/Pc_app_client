@@ -7,28 +7,13 @@ const Footer = () => (
         <ul>
           <li>
             <a href="#">
-              Home
-                  </a>
-          </li>
-          <li>
-            <a href="#">
-              Company
-                  </a>
-          </li>
-          <li>
-            <a href="#">
-              Portfolio
-                  </a>
-          </li>
-          <li>
-            <a href="#">
-              Blog
+              Placement Cell 2019-2020
                   </a>
           </li>
         </ul>
       </nav>
       <p className="copyright pull-right">
-        © 2017 <a href="http://jslancer.com">JSLancer</a>, made with love for a better web
+        Help
       </p>
     </div>
   </footer>
