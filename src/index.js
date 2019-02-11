@@ -7,17 +7,21 @@ import 'sweetalert/dist/sweetalert.css';
 import Main from './pages/Main';
 import configureStore from './config/configureStore';
 import { Provider } from 'react-redux';
+import {ApolloProvider} from 'react-apollo'
+import client from './network/apollo'
 
 const store = configureStore();
 const rootElement = document.getElementById('root');
 
 const renderApp = Component => {
   ReactDOM.render(
+    <ApolloProvider client={client}>
     <Provider store={store}>
       <HashRouter>
         <Component />
       </HashRouter>
-    </Provider>,
+    </Provider>
+    </ApolloProvider>,
     rootElement
   );
 };

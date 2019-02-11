@@ -32,7 +32,7 @@ class SideBar extends Component {
         </div>
 
         <div className="sidebar-wrapper">
-          <UserInfo />
+          <UserInfo/>
           <div className="line"></div>
           <Nav />
         </div>

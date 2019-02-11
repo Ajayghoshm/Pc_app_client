@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Collapse } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import cx from 'classnames';
+import {Link} from 'react-router-dom'
 
 class UserInfo extends Component {
 
@@ -30,9 +31,7 @@ class UserInfo extends Component {
         </div>
         <Collapse in={isShowingUserMenu}>
           <ul className="nav user-nav">
-            <li><a href="#">My Profile</a></li>
-            <li><a href="#">Edit Profile</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><Link to="/profile">Profile</Link></li>
           </ul>
         </Collapse>
       </div>
