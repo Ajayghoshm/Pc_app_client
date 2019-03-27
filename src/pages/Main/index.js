@@ -24,6 +24,7 @@ import Calendar from '../Calendar';
 import Tables from '../Tables';
 import Academics from '../Academics'
 import Training from "../Training"
+import Resume from "../Resume"
 
 const Main = ({
   mobileNavVisibility,
@@ -56,6 +57,7 @@ const Main = ({
           <Route path="/academics" component={Academics}/>
           <Route path="/training" component={Training}/>
           <Route path="/other"component={Otherpages}/>
+          <Route path="/resume" component={Resume}/>
           <Footer />
         </div>
       </div>

@@ -1,28 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import DatePicker from './Date'
+
 
 const ProfileForm = (props) => (
   <div className="card">
-  
-    <div className="header">
-      <h4 className="title">
-      <button className="btn btn-info btn-fill pull-right" onClick={this.permission_request}>Ask edit permission</button>Edit Profile</h4>
-    </div>
     <div className="content">
       <form>
-
         <div className="row">
           <div className="col-md-6">
             <div className="form-group">
               <label>First Name</label>
-              <input type="text" className="form-control" disabled={props.state} placeholder="Company" defaultValue={props.profile.name.f_name} />
+              <input type="text" className="form-control" placeholder="Company" />
             </div>
           </div>
           <div className="col-md-6">
             <div className="form-group">
               <label>Last Name</label>
-              <input type="text" className="form-control" disabled={props.state} placeholder="Last Name" defaultValue={props.profile.name.l_name} />
+              <input type="text" className="form-control" placeholder="Last Name" />
             </div>
           </div>
         </div>
@@ -31,13 +24,13 @@ const ProfileForm = (props) => (
           <div className="col-md-6">
             <div className="form-group">
               <label>House Name</label>
-              <input type="text" className="form-control"  disabled={props.state} placeholder="Home Address" defaultValue={props.profile.address_1.h_name}/>
+              <input type="text" className="form-control" placeholder="Home Address" />
             </div>
           </div>
           <div className="col-md-6">
             <div className="form-group">
               <label>Street</label>
-              <input type="text" className="form-control"  disabled={props.state} placeholder="Home Address" defaultValue={props.profile.address_1.street}/>
+              <input type="text" className="form-control"   placeholder="Home Address" />
             </div>
           </div>
           </div>
@@ -46,19 +39,19 @@ const ProfileForm = (props) => (
           <div className="col-md-4">
             <div className="form-group">
               <label>District</label>
-              <input type="text" className="form-control" disabled={props.state} placeholder="District" defaultValue={props.profile.address_1.district} />
+              <input type="text" className="form-control"  placeholder="District"  />
             </div>
           </div>
           <div className="col-md-4">
             <div className="form-group">
               <label>State</label>
-              <input type="text" className="form-control" disabled={props.state} placeholder="ZIP Code" defaultValue={props.profile.address_1.state}/>
+              <input type="text" className="form-control" placeholder="ZIP Code" />
             </div>
           </div>
           <div className="col-md-4">
             <div className="form-group">
               <label>Postal Code</label>
-              <input type="number" className="form-control" disabled={props.state} placeholder="ZIP Code" defaultValue={props.profile.address_1.pincode}/>
+              <input type="number" className="form-control" placeholder="ZIP Code"/>
             </div>
           </div>
           </div>
@@ -66,13 +59,13 @@ const ProfileForm = (props) => (
           <div className="col-md-6">
           <div className="form-group">
           <label>Phone number</label>
-          <input type="number" className="form-control" disabled={props.state} placeholder="Phone number" value={props.profile.phone.no_1}/>
+          <input type="number" className="form-control"  placeholder="Phone number"/>
           </div>
           </div>
           <div className="col-md-6">
           <div className="form-group">
           <label>Alt. Phone number</label>
-          <input type="number" className="form-control" disabled={props.state} placeholder="Alternaive Phone number" value={props.profile.phone.no_2} />
+          <input type="number" className="form-control" placeholder="Alternaive Phone number"  />
           </div>
           </div>
           </div>
@@ -81,13 +74,13 @@ const ProfileForm = (props) => (
           <div className="col-md-6">
             <div className="form-group">
               <label>Email Address</label>
-              <input type="text" className="form-control"  disabled={props.state} placeholder="Home Address" value={props.profile.email.email_1}/>
+              <input type="text" className="form-control"  placeholder="Home Address"/>
             </div>
           </div>
           <div className="col-md-6">
             <div className="form-group">
               <label>Alt. Email Address</label>
-              <input type="text" className="form-control"  disabled={props.state} placeholder="Home Address" value={props.profile.email.email_2}/>
+              <input type="text" className="form-control"  placeholder="Home Address"/>
             </div>
           </div>
           </div>
@@ -100,7 +93,6 @@ const ProfileForm = (props) => (
           <div className="col-md-12">
             <div className="form-group">
               <label>Date of birth</label>
-              <DatePicker/>
             </div>
           </div>
         </div>
@@ -109,23 +101,23 @@ const ProfileForm = (props) => (
           <div className="col-md-4">
             <div className="form-group">
               <label>KTU Number</label>
-              <input type="number" className="form-control" disabled={props.state} placeholder="Alternaive Phone number" />
+              <input type="number" className="form-control" placeholder="Alternaive Phone number" />
             </div>
           </div>
           <div className="col-md-4">
             <div className="form-group">
               <label>Admission Number</label>
-              <input type="number" className="form-control" disabled={props.state} placeholder="Alternaive Phone number" />
+              <input type="number" className="form-control"  placeholder="Alternaive Phone number" />
             </div>
           </div>
           <div className="col-md-4">
             <div className="form-group">
               <label>Roll Number</label>
-              <input type="number" className="form-control" disabled={props.state} placeholder="Alternaive Phone number" />
+              <input type="number" className="form-control"  placeholder="Alternaive Phone number" />
             </div>
           </div>
         </div>
-        <button type="submit" className="btn btn-info btn-fill pull-right" disabled={props.state}>Update Profile</button>
+        <button type="submit" className="btn btn-info btn-fill pull-right" onClick={()=>{ props.next(2)}}>Next</button>
         <div className="clearfix"></div>
       </form>
     </div>
@@ -133,8 +125,4 @@ const ProfileForm = (props) => (
 );
 
 
-const mapsStatetoprops=(state)=>{
-  console.log(state.Auth.user.editpermissions)
-  return {state:state.Auth.user.editpermissions}
-}
-export default connect(mapsStatetoprops)(ProfileForm);
+export default ProfileForm;

@@ -1,4 +1,4 @@
-import {ADD_POST} from './PostRegister'
+import {Actions} from '../action_types'
 import axios from 'axios'
 
 const url='http://locahost:4000'
@@ -17,7 +17,7 @@ export const createpost =(registerstorevalues)=>{
 
 export const createPostSuccess =  (data) => {
     return {
-      type: ADD_POST,
+      type: Actions.ADD_POST,
       payload: {
         _id:data._id,
         _sucess:true

@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
           <div className="row">
             <Query query={gql`
           {
-          user(id: "5c5ede058643fa0704c91e09"){
+          UserQuery(id: "5c5ede058643fa0704c91e09"){
             id,
             name{
               f_name
@@ -56,16 +56,16 @@ class Dashboard extends React.Component {
                 return (
                   <div>
                   <div className="col-md-12">
-                    <Placed placed={data.user.company} />
+                    <Placed placed={data.UserQuery.company} />
                   </div>
                   <div>
                   <div className="col-md-6">
-                      <Upcoming upcoming_Drives={data.user.upcoming_Drives}/>
+                      <Upcoming upcoming_Drives={data.UserQuery.upcoming_Drives}/>
                     </div>
                     <Query
                     query={gql`
                     {
-                    notification{
+                      notification_query{
                       content
                       count
                       completed
@@ -76,7 +76,7 @@ class Dashboard extends React.Component {
                       if (error) return <p>Error :(</p>;
                       return (
                         <div className="col-md-6">
-                      <Tasks notification={data.notification} />
+                      <Tasks notification={data.notification_query} />
                     </div>
                       )
                     }}

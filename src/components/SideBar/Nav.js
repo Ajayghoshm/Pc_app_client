@@ -50,6 +50,11 @@ class Nav extends Component {
             </div>
             </Collapse>
         </li>
+        <li className={this.isPathActive("/resume")? 'active':null}>
+        <Link to="/Resume">
+        <i className="pe-7s-loop"></i>
+        <p>Resume</p></Link>
+        </li>
         <li className={this.isPathActive("/training") ? 'active' : null}>
           <Link to="/training">
             <i className="pe-7s-loop"></i>
