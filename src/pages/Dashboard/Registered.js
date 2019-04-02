@@ -4,7 +4,7 @@ import moment from 'moment';
 import Alert from 'sweetalert-react';
 const data = generateData(7);
 
-class BigTable extends Component {
+class Registered extends Component {
 
   state={
     
@@ -63,4 +63,4 @@ class BigTable extends Component {
           }
         }
 
-export default BigTable;
+export default Registered;

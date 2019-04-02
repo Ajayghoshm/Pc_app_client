@@ -15,7 +15,7 @@ const rootElement = document.getElementById('root');
 
 const renderApp = Component => {
   ReactDOM.render(
-    <ApolloProvider client={client}>
+    <ApolloProvider client={client} >
     <Provider store={store}>
       <HashRouter>
         <Component />

@@ -32,7 +32,7 @@ class Tasks extends Component {
       <div className="card ">
         <div className="content"
         style={{'max-height': 400, 'min-height': 400, 'overflow-y': 'scroll'}}>
-          <form>
+          <form >
           {this.state.todos.map(todo => (
             <div className={cx("todo-item", {completed: todo.completed})} key={todo.id}>
               <div className="todo-item-wrapper">

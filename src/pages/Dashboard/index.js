@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
              slot
             }
             upcoming_Drives{
-              
+              id
               status
               Name
               Branch
@@ -66,6 +66,7 @@ class Dashboard extends React.Component {
                     query={gql`
                     {
                       notification_query{
+                      id
                       content
                       count
                       completed

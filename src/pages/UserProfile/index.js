@@ -8,8 +8,9 @@ import gql from 'graphql-tag'
 const UserProfile = () => (
   <div className="content">
     <div className="container-fluid">
-    <Query query={gql`{
+      <Query query={gql`{ 
   UserQuery(id:"5c5ede058643fa0704c91e09"){
+    id
   name{
     f_name
     l_name
@@ -29,21 +30,25 @@ const UserProfile = () => (
       email_1
       email_2
     }
+    status
   }}`}>
-  {({loading,error,data})=>{
-    if (loading || !data) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
-    return (
-      <div className="row">
-        <div className="col-md-8">
-          <ProfileForm profile={data.UserQuery}/>
-        </div>
-        <div className="col-md-4">
-          <UserInfo />
-        </div>
-      </div>
-    )}}
-  </Query>
+        {({ loading, error, data }) => {
+          if (loading || !data) return <p>Loading...</p>;
+          else if (error) return <p>Error :(</p>;
+          else if(data.UserQuery!=null){
+          return (
+            <div className="row">
+              <div className="col-md-8">
+                <ProfileForm profile={data.UserQuery} status={data.UserQuery.status==1? false:true}/>
+              </div>
+              <div className="col-md-4">
+                <UserInfo />
+              </div>
+            </div>
+          )
+          }
+        }}
+      </Query>
     </div>
   </div>
 );
