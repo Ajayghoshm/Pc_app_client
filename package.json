@@ -12,7 +12,7 @@
     "apollo-link-error": "^1.1.10",
     "apollo-link-http": "^1.5.14",
     "autoprefixer": "7.1.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
